@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('layouts/nav');-%>
+<body>
+    <form action="/register" class="row g-3 needs-validation m-auto" enctype="multipart/form-data" method="POST" style="width:90%;">
+        <div class="form-floating mb3">
+            <input type="text" class="form-control" name="name" value="<%=docs.name%>" placeholder="Name" required>
+            <label for="name">Teacher's Full Name</label>
+        </div>
+        <div class="form-floating mb3">
+           <input class="form-control" name="dob" type="date" placeholder="dd/mm/yyyy" value="<%=docs.dob%>">
+           <label for="dob">Enter DOB</label>
+        </div>
+        <div class="form-floating mb3">
+            <input type="text" class="form-control" name="pob" placeholder="PLace of Birth" value="<%=docs.pob%>" required>
+            <label for="pob">Enter Place Of Birth</label>
+        </div>
+        <div class="form-floating mb3">
+            <input type="text" class="form-control" name="sdo" placeholder="Sub Division of Origin" value="<%=docs.sdo%>" required>
+            <label for="sdo">Enter Sub Division of Origin</label>
+        </div>
+        <div class="form-floating mb3">
+            <input type="text" class="form-control" name="do" placeholder="Division of Origin" value="<%=docs.do%>" required>
+            <label for="do">Enter Division of Origin</label>
+        </div>
+        <div class="form-floating mb3">
+            <input type="text" class="form-control" name="ro" placeholder="Region of Origin" value="<%=docs.ro%>" required>
+            <label for="ro">Enter Region of origin</label>
+        </div>
+        <div class="d-flex mx-2">
+            <div>
+                <input type="checkbox" name="male" id="mm">
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="checkbox" name="female" id="ff">
+                <label for="female">Female</label>
+            </div>
+           </div>
+           <div class="d-flex mx-2">
+            <div>
+                <input type="checkbox" name="married" id="m">
+                <label for="married">Married</label>
+            </div>
+            <div>
+                <input type="checkbox" name="single" id="s">
+                <label for="single">Single</label>
+            </div>
+           </div>  
+        <div class="form-floating mb3">
+           <input class="form-control" name="num" type="number" value="<%=docs.num%>" placeholder="Phone Number">
+           <label for="num">Enter Phone Number</label>
+        </div>
+        <div class="form-floating mb3">
+           <input class="form-control" name="email" type="email" value="<%=docs.email%>"placeholder="@Email">
+           <label for="email">Enter Email</label>
+        </div>
+        <div class="form-floating mb3">
+           <input class="form-control" name="mat" type="text" value="<%=docs.mat%>" placeholder="Matricule">
+           <label for="mat">Enter Matricule</label>
+        </div>
+        <div class="form-floating mb3">
+           <input class="form-control" name="subj" type="text" value="<%=docs.subj%>" placeholder="Subject">
+           <label for="subj">Enter Subject</label>
+        </div>
+        <select name="grade" class="form-select" value="<%=docs.grade%>">
+            <option selected>Choose career grade</option>
+            <option value="PLEG">PLEG</option>
+            <option value="PCET">PCET</option>
+            <option value="PCEG">PCEG</option>
+            <option value="IPEG">IPEG</option>
+        </select>
+        <div class="form-floating mb3">
+            <input class="form-control" name="dops" type="date"  value="<%=docs.dops%>"placeholder="dd/mm/yyyy" value="dd/mm/yyyy">
+            <label for="dops">Enter Date of Entry into Public Service</label>
+         </div>
+        <div class="form-floating mb3">
+            <input class="form-control" name="es" type="file" placeholder="Upload effective service">
+            <label for="es">UPLOAD</label>
+         </div>
+
+        <button class="btn btn-primary" id="submit" type="submit">Register Teacher <i class="fa-solid fa-plus"></i></button>
+    </form>   
+<footer>
+    <p class="text-center">infinity tech</p>
+</footer>
+</body>
+</html>

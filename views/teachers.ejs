@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('layouts/nav.ejs');-%>
+</head>
+<body>
+    
+    <div class="find mx-auto my-5" style="width:60%;">
+        <form action="POST" class="d-flex" role>
+            <input type="search" class="form-control me-2" placeholder="Name of Teacher">
+            <button class="btn btn-outline-primary" type="submit">Find</button>
+        </form>
+    </div>
+   <div class="d-flex justify-content-around">
+    <h3 class="text-center">Registered Teachers</h3>
+    <button class="btn btn-primary">Number of Teachers: <%=obj.num%></button>
+   </div>
+    <div>
+      <div class="table-responsive m-1">
+        <table class="table">
+            <thead class="table-info">
+                <tr>
+                    <th scope="col">S/N</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">POB</th>
+                    <th scope="col">SDO</th>
+                    <th scope="col">RO</th>
+                    <th scope="col">DO</th>
+                    <th scope="col">MAT</th>
+                    <th scope="col">SUBJECT</th>
+                    <th scope="col">GRADE</th>
+                    <th scope="col">NUM</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">OPTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < obj.teachers.length; i++){%>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=obj.teachers[i].name%></td>
+                    <td><%let day = obj.teachers[i].dob.toString().slice(0,16)%><%=day%></td>
+                    <td><%=obj.teachers[i].pob%></td>
+                    <td><%=obj.teachers[i].sdo%></td>
+                    <td><%=obj.teachers[i].ro%></td>
+                    <td><%=obj.teachers[i].do%></td>
+                    <td><%=obj.teachers[i].mat%></td>
+                    <td><%=obj.teachers[i].subj%></td>
+                    <td><%=obj.teachers[i].grade%></td>
+                    <td><%let dops = obj.teachers[i].dops.toString().slice(0,16)%><%=dops%></td>
+                    <td><%=obj.teachers[i].num%></td>
+                    <td><%=obj.teachers[i].email%></td>
+                    <td class="d-flex justify-content-around">
+                        <a href="/teachers/editid/?editid=<%=obj.teachers[i]._id%>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="/teachers/deleteid?<%=obj.teachers[i]._id%>" class="btn btn-danger" id=``><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <%}%>
+            </tbody>
+           </table>
+      </div>
+    </div>
+    <%-include('layouts/scripts'); -%>
+</body>
+</html>

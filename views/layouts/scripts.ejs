@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script>
+
+    const urlParams = new URLSearchParams(window.location.search)
+    const status = urlParams.get('error')
+    if(status == 'Err'){
+        document.getElementById('regAlert').classList.remove('d-none')
+        document.addEventListener('keyup',()=>{
+            
+            setTimeout(()=>{
+                document.getElementById('regAlert').classList.add('d-none')
+            },1000)
+            
+        })
+    }else if(status=='ok'){
+        document.getElementById('regSuccess').classList.remove('d-none')
+        document.addEventListener('keyup',()=>{
+            setTimeout(()=>{
+                document.getElementById('regSuccess').classList.add('d-none')
+            }, 1000)
+        })
+    }
+</script>

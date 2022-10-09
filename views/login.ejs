@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%-include('layouts/nav.ejs');-%>
+</head>
+<body>
+<div class="mx-auto my-5" style="width:60%;">
+    <div class="d-none alert alert-danger" id="regAlert">
+       <h4 class="text-center">Incorrect credentials</h4>
+    </div>
+    <form action="/login" class="row g-3 needs-validation" method="POST" role>
+        <h4 class="text-center">Admin verification needed before seeing records</h4>
+        <div class="form-floating mb3 form-control">
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-floating mb3 form-control">
+            <input type="password" name="password" placeholder="Enter password" required>    
+        </div>  
+        <button class="btn btn-primary">confirm</button>     
+    </form>
+</div>
+<footer>
+    <p class="text-center">infinity tech</p>
+</footer>
+<%-include('layouts/scripts'); -%>
+</body>
+</html>
